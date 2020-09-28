@@ -1,0 +1,30 @@
+program ex3;
+
+
+      var t:byte    ;
+      var a:string [4]  ;
+begin
+portb:=$00;
+trisb:=$00;
+trisc:=$00;
+  t:=0;
+lcd_Init(portb);
+ Lcd_Out(1, 1, 'sem2 iset Nabeul ');
+ Lcd_Out(2, 2, ' tp3 arch et syst 2');
+  delay_ms(2000);
+   Lcd_CMD(Lcd_clear);
+
+       Lcd_Out(1, 1, 'nbre voiture ');
+   while(true) do
+   begin
+
+   if(portc.0=1)then
+   begin
+   t:=t+1;
+   ByteToStr(t,a);
+   Lcd_Out(2, 2,a);
+     delay_ms(2000) ;
+   lcd_cmd(lCD_CURSOR_OFF);
+     end;
+     end;
+end.

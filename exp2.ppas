@@ -1,0 +1,31 @@
+program exp2;
+
+
+
+begin
+portb:=$00;
+portc:=$00;
+trisb:=$ff;
+trisc:=$ff;
+lcd_Init(Portb);
+lcd_out(1,1,'Sem Iset Nabeul');
+Lcd_Out(2, 2, ' Arch et sys 2');
+delay_ms(2000);
+lcd_cmd(lcd_clear);
+
+while(true)do
+begin
+if (portc.1=0)then
+begin
+lcd_out(1,1,'Acces Interdit');
+lcd_cmd(lcd_CURSOR_OFF)    ;
+end
+Else
+
+ lcd_out(1,1,'Acces Autorisè');
+ lcd_cmd(lcd_CURSOR_OFF)    ;
+  end
+  end .
+
+
+

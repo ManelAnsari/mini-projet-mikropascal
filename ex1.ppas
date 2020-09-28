@@ -1,0 +1,16 @@
+program ex1;
+
+begin
+portb:=$00;
+trisb:=$00;
+trisc:=$ff;
+Lcd_Init(PORTB) ;
+ Lcd_Out(1, 1, 'sem2 iset Nabeul ');
+ Lcd_Out(2, 2, ' Arch et sys 2');
+delay_ms(2000);
+
+Lcd_CMD(Lcd_clear);
+lcd_cmd(lCD_CURSOR_OFF);
+
+
+end.

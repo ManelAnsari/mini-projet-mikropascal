@@ -1,0 +1,27 @@
+program pwm;
+
+ procedure Init();
+ begin
+ TRISB := $FF;
+ TRISD := $00;
+ TRISC := $00;
+ Lcd_Init(PORTD);
+ Lcd_Cmd(LCD_CURSOR_OFF);
+ Pwm_Init(5000);       //Initialize PWM module, freq = 5kHz.
+ Pwm_Change_Duty(127);     //  50%
+ end;
+
+begin
+Init();
+while true do
+begin
+if (PORTB.1 =0) then
+begin
+Pwm_Start();
+end;
+if (PORTB.2 =0) then
+begin
+Pwm_Stop();
+end;
+end;
+end.
